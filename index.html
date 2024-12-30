@@ -5,10 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Animated Website</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Added the Spline Viewer Script -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.54/build/spline-viewer.js" async></script>
 </head>
 <body>
+    <!-- Top Navigation Bar -->
+    <nav id="top-nav-bar">
+        <ul>
+            <li>
+                <a href="#about-me">ABOUT ME</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Main Title -->
     <div id="animation-container">
-        <h1>Welcome to My Animated Website!</h1>
+        <h1>Welcome to My Website!</h1>
+    </div>
+
+    <!-- Spline Animation -->
+    <section id="spline-animation">
+        <!-- Embedded Spline Viewer -->
+        <spline-viewer 
+            loading-anim-type="spinner-small-dark" 
+            url="https://prod.spline.design/gVk4BLEMnU5IAM7z/scene.splinecode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAANCAYAAADISGwcAAAG1ElEQVR4AQCBAH7/..." 
+                 alt="Spline preview" 
+                 style="width: 100%; height: 100%;" />
+        </spline-viewer>
+    </section>
+    <!-- Main Content -->
+    <div id="content">
+        <section id="about-me">
+            <h2>ABOUT ME</h2>
+            <p>I am from Japan</p>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <p>YIS -> UIUC</p>
+        </section>
+        <section id="publication">
+            <h2>Publication</h2>
+            <p>Current publications are ...</p>
+        </section>
+        <section id="publication">
+            <h2>Publication</h2>
+            <p>Current publications are ...</p>
+        </section>
     </div>
     <script src="script.js"></script>
 </body>
