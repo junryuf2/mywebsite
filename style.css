@@ -46,6 +46,7 @@ body {
     justify-content: center;  /* Center the viewer horizontally */
     align-items: center;      /* Center the viewer vertically */
     height: 100vh;            /* Use full viewport height */
+    overflow: hidden;
 }
 
 #spline-animation spline-viewer {
@@ -54,6 +55,7 @@ body {
     height: 100%;             /* Fill the container's height */
     max-width: 1000px;        /* Optional: Limit the maximum width */
     max-height: 500px;
+    aspect-ratio: 16 / 9;      /* Enforce aspect ratio */
     margin-top: 0vh;
 }
 
@@ -79,5 +81,18 @@ body {
     }
     to {
         opacity: 1;
+    }
+}
+
+/* Add responsive media queries */
+@media screen and (max-width: 768px) {
+    #spline-animation {
+        height: auto;          /* Allow flexible height on smaller screens */
+        padding: 20px;         /* Add some padding for better visibility */
+    }
+
+    #spline-animation spline-viewer {
+        max-width: 90%;        /* Shrink the viewer to 90% of the screen width */
+        max-height: 80vh;      /* Prevent it from taking up too much vertical space */
     }
 }
