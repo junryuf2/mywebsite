@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #2575fc,  #333);
+    background: linear-gradient(to bottom, #0048c3,  #420034);
     min-height: 100%;
     display: flex;
     flex-direction: column; /* Align content vertically */
@@ -37,26 +37,28 @@ body {
 #animation-container {
     animation: fadeIn 3s ease-in-out infinite alternate;
     text-align: center;
-    margin-top: 200px; /* Add space from the top for the navbar */
-    margin-bottom: 5vh; /* Space below the title */
+    margin-top: 10vh; /* Add space from the top for the navbar */
+    margin-bottom: 0vh; /* Space below the title */
 }
 /* Styling for Spline Animation Section */
 #spline-animation {
     display: flex;
     justify-content: center;  /* Center the viewer horizontally */
     align-items: center;      /* Center the viewer vertically */
-    margin-top: 40px;         /* Add space from the title */
     height: 100vh;            /* Use full viewport height */
 }
 
 #spline-animation spline-viewer {
-    width: 80%;               /* Adjust width as needed */
+    border: 3px solid white;
+    width: 100%;               /* Adjust width as needed */
     height: 100%;             /* Fill the container's height */
-    max-width: 1200px;        /* Optional: Limit the maximum width */
+    max-width: 1000px;        /* Optional: Limit the maximum width */
+    max-height: 500px;
+    margin-top: 0vh;
 }
 
 #content {
-    margin: 20px auto;
+    margin-top: 0vh;
     padding: 20px;
     max-width: 900px; /* Optional: Increase width of content */
 }
@@ -68,7 +70,6 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 20px; /* Space between title and About Me section */
 }
 
 /* Animation for fade-in effect */
