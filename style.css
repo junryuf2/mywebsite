@@ -50,7 +50,6 @@ body {
 }
 
 #spline-animation spline-viewer {
-    border: 3px solid white;
     width: 100%;               /* Adjust width as needed */
     height: 100%;             /* Fill the container's height */
     max-width: 1000px;        /* Optional: Limit the maximum width */
