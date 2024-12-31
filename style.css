@@ -36,6 +36,7 @@ body, html {
     margin: 0;
 }
 
+/* Tab section */
 #tabs-container {
     display: flex;
     justify-content: center;
@@ -66,6 +67,7 @@ body, html {
 .tab-button:focus {
     background-color: #0048c3;
 }
+
 /* Sections */
 #sections {
     margin: 10px auto;
@@ -84,6 +86,27 @@ body, html {
     display: block; /* Show the active tab */
 }
 
+/* Linked contents */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Style for the iframe */
+iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    color: #ccf2ff
+}
+
+/* Header style */
+h1, h2 {
+    color: #ccf2ff;
+}
 
 /* Animation for fade-in effect */
 @keyframes fadeIn {
@@ -110,12 +133,19 @@ body, html {
 /* Add responsive media queries */
 @media screen and (max-width: 768px) {
     #spline-animation {
-        height: auto;          /* Allow flexible height on smaller screens */
-        padding: 20px;         /* Add some padding for better visibility */
+        height: 400px;         /* Allow flexible height on smaller screens */
+        width: 700px;
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        border: none;
+        margin-left: -160px;
     }
 
     #spline-animation spline-viewer {
-        max-width: 90%;        /* Shrink the viewer to 90% of the screen width */
-        max-height: 80vh;      /* Prevent it from taking up too much vertical space */
+        max_width: 100%;
+        scale: 0.55;
     }
 }
