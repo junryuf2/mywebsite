@@ -9,39 +9,42 @@
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.54/build/spline-viewer.js" async></script>
 </head>
 <body>
-    <!-- Top Navigation Bar -->
+    <!-- Top Navigation Bar
     <nav id="top-nav-bar">
         <ul>
             <li>
                 <a href="#about-me">ABOUT ME</a>
             </li>
         </ul>
-    </nav>
+    </nav> -->
     <!-- Main Title -->
     <div id="animation-container">
         <h1>Hey! Welcome to my website!</h1>
-        <h2>こんにちは！私のウェブサイトへようこそ！</h2>
+        <p>こんにちは！私のウェブサイトへようこそ！</p>
     </div>
     <!-- Spline Animation -->
-    <div id="spline">
-        <section id="spline-animation">
-            <!-- Embedded Spline Viewer -->
-            <spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/gVk4BLEMnU5IAM7z/scene.splinecode"><img src="data:image/png;base64,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" alt="Spline preview" style="width: 100%; height: 100%;"/></spline-viewer>
-    </div>
-    <div id="content">
-        <section id="about-me">
+    <div id="spline"><section id="spline-animation"><spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/gVk4BLEMnU5IAM7z/scene.splinecode"><img src="data:image/png;base64,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" alt="Spline preview" style="width: 100%; height: 100%;"/></spline-viewer></div>
+    <!-- Tab buttons -->
+    <div id="tabs-container">
+        <button class="tab-button" onclick="showSection('about-me')">About Me</button>
+        <button class="tab-button" onclick="showSection('experience')">Experience</button>
+        <button class="tab-button" onclick="showSection('education')">Education</button>
+        <button class="tab-button" onclick="showSection('publication')">Publication</button></div>
+    <!-- Individual Sections -->
+    <div id="sections">
+        <section id="about-me" class="tab-content" style="display: contents;">
             <h2>ABOUT ME</h2>
             <p>I am from Japan</p>
         </section>
-        <section id="experience">
+        <section id="experience" class="tab-content" style="display: none;">
             <h2>Experience</h2>
             <p>YIS -> UIUC</p>
         </section>
-        <section id="education">
+        <section id="education" class="tab-content" style="display: none;">
             <h2>Education</h2>
             <p>Current publications are ...</p>
         </section>
-        <section id="publication">
+        <section id="publication" class="tab-content" style="display: none;">
             <h2>Publication</h2>
             <p>Current publications are ...</p>
         </section>

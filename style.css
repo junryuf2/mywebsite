@@ -1,37 +1,15 @@
-body {
+body, html {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #0048c3,  #420034);
-    min-height: 100%;
+    background: linear-gradient(-45deg, #b2e1f9, #0b6e61, #012e5e, #8f054c);
+    background-size: 600% 600%;
+    animation: gradient 25s ease infinite;
+    min-height: 50%;
     display: flex;
     flex-direction: column; /* Align content vertically */
     justify-content: flex-start; /* Align the content from the top */
     color: white;
-}
-
-#top-nav-bar {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    display: flex;
-    width: 100%;
-    background-color: #333;
-    padding: 10px 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-#top-nav-bar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-#top-nav-bar ul li {
-    margin: 0 20px;
 }
 
 #animation-container {
@@ -55,23 +33,57 @@ body {
     max-width: 1000px;        /* Optional: Limit the maximum width */
     max-height: 500px;
     aspect-ratio: 16 / 9;      /* Enforce aspect ratio */
-    margin-top: 0vh;
+    margin: 0;
 }
 
-#content {
-    margin-top: 0vh;
-    padding: 20px;
-    max-width: 900px; /* Optional: Increase width of content */
-}
-
-/* Section Styling */
-#about-me {
-    background-color: #0a218b;
-    text-align: left;
-    padding: 20px;
+#tabs-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
 }
+
+.tab-button {
+    background: none;
+    color: white;
+    border: solid;
+    border-width: 1px;
+    border-color: aqua;
+    padding: 10px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.tab-button:hover {
+    background-color: #777;
+}
+
+.tab-button:focus {
+    background-color: #0048c3;
+}
+/* Sections */
+#sections {
+    margin: 10px auto;
+    max-width: 1000px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.tab-content {
+    display: none; /* Hidden by default */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: block; /* Show the active tab */
+}
+
 
 /* Animation for fade-in effect */
 @keyframes fadeIn {
@@ -80,6 +92,18 @@ body {
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
 
