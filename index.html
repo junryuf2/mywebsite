@@ -4,51 +4,369 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Junryu Fu's personal website showcasing projects, blogs, and achievements.">
-    <title>Welcome to Junryu Fu's website</title>
+    <meta name="description" content="Junryu Fu — Civil Engineering and Machine Learning researcher at UIUC.">
+    <meta name="google-site-verification" content="dJvywSb-k4PPSh55lZQBg6rej_RFRWkRZmNYeFRRsZk" />
+    <title>Junryu Fu</title>
     <link rel="icon" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Added the Spline Viewer Script -->
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.59/build/spline-viewer.js" async></script>
 </head>
 <body>
     <div id="language-selector">
-        <button id="lang-en" class="lang-button" onclick="switchLanguage('en')">EN</button>
+        <button id="lang-en" class="lang-button active" onclick="switchLanguage('en')">EN</button>
         <button id="lang-ja" class="lang-button" onclick="switchLanguage('ja')">日本語</button>
     </div>
-      
-      
-    <!-- Main Title -->
-    <div id="animation-container">
-        <h1 id="welcomeMessage">Hey! Welcome to my website!</h1>
-        <p id="animationMessage">Scroll down to see the cranes working hard on this construction site!</p>
+
+    <div id="scroll-hint" aria-hidden="true">
+        <div class="scroll-hint-inner">
+            <span id="scrollHintMessage">scroll down to see them work!</span>
+            <span class="scroll-hint-arrow">↓</span>
+        </div>
     </div>
-    <!-- Spline Animation -->
-    <div id="spline"><section id="spline-animation"><spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/gVk4BLEMnU5IAM7z/scene.splinecode"><img src="data:image/png;base64,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" alt="Spline preview" style="width: 100%; height: 100%;"/></spline-viewer></div>
-    <!-- Tab buttons -->
+
+    <div id="animation-container">
+        <h1 id="welcomeMessage">Hey! Welcome to Junryu's website!</h1>
+    </div>
+
+    <div id="spline">
+        <section id="spline-animation">
+            <spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/gVk4BLEMnU5IAM7z/scene.splinecode"></spline-viewer>
+        </section>
+    </div>
+
     <div id="tabs-container">
-        <button class="tab-button" onclick="showSection('aboutme')" id="aboutmeTab">About Me</button>
+        <button class="tab-button active" onclick="showSection('aboutme')" id="aboutmeTab">About Me</button>
         <button class="tab-button" onclick="showSection('experience')" id="experienceTab">Experience</button>
         <button class="tab-button" onclick="showSection('education')" id="educationTab">Education</button>
-        <button class="tab-button" onclick="showSection('publication')" id="publicationTab">Publication</button></div>
-    <!-- Individual Sections -->
+        <button class="tab-button" onclick="showSection('publication')" id="publicationTab">Publication</button>
+    </div>
+
     <div id="sections">
-        <section id="aboutme" class="tab-content" style="display: contents;">
-            <iframe src="pages/aboutme.html"></iframe>
+        <section id="aboutme" class="tab-content active">
+            <h2>About Me</h2>
+            <p>I'm from Yokohama, Japan. My background is in Civil Engineering, specifically in Construction Engineering and Management, and Machine Learning. I am interested in changing an industry that is spiraling into its most uncertain age due to labor shortages, rising costs, and increased demand for building new buildings as well as maintaining old buildings and infrastructure. My current focus is advancing MLLM capabilities for construction specific domains. </p>
         </section>
-        <section id="experience" class="tab-content" style="display: none;">
-            <iframe src="pages/experience.html"></iframe>
+
+        <section id="experience" class="tab-content">
+            <h2 data-en="Experience" data-ja="経験">Experience</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-header">
+                            <div class="tl-info">
+                                <div class="tl-meta">
+                                    <span class="tl-role" data-en="Independent Researcher" data-ja="独立研究員">Independent Researcher</span>
+                                    <span class="tl-date">Aug 2025 – Present</span>
+                                </div>
+                                <div class="tl-company" data-en="Independent" data-ja="独立">Independent</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-header">
+                            <div class="tl-logo-wrap">
+                                <img class="tl-logo" src="https://logo.clearbit.com/aecom.com" alt="AECOM Hunt" onerror="this.parentElement.style.display='none'">
+                            </div>
+                            <div class="tl-info">
+                                <div class="tl-meta">
+                                    <span class="tl-role" data-en="Project Engineer" data-ja="プロジェクトエンジニア">Project Engineer</span>
+                                    <span class="tl-date">Jul 2025 – Present</span>
+                                </div>
+                                <div class="tl-company"><a href="https://www.aecom.com" target="_blank" rel="noopener" class="tl-company-link">AECOM Hunt</a> · Full-time · 🇺🇸 Chicago, IL</div>
+                            </div>
+                        </div>
+                        <p data-en="Satellite 1 (Concourse D) Project at O'Hare International Airport — Midfield Cooling Plant (MCP) and Hydronic Piping systems." data-ja="オヘア国際空港の Satellite 1（Concourse D）プロジェクト — Midfield Cooling Plant（MCP）と Hydronic Piping システムを担当。">Satellite 1 (Concourse D) Project at O'Hare International Airport — Midfield Cooling Plant (MCP) and Hydronic Piping systems.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-header">
+                            <div class="tl-logo-wrap">
+                                <img class="tl-logo" src="https://logo.clearbit.com/illinois.edu" alt="UIUC" onerror="this.parentElement.style.display='none'">
+                            </div>
+                            <div class="tl-info">
+                                <div class="tl-meta">
+                                    <span class="tl-role" data-en="Graduate Research &amp; Teaching Assistant" data-ja="大学院研究・ティーチングアシスタント">Graduate Research &amp; Teaching Assistant</span>
+                                    <span class="tl-date">Aug 2023 – Sep 2025</span>
+                                </div>
+                                <div class="tl-company"><a href="https://illinois.edu" target="_blank" rel="noopener" class="tl-company-link">University of Illinois Urbana-Champaign</a> · 🇺🇸 Champaign, IL</div>
+                            </div>
+                        </div>
+                        <p data-en="M.S. thesis research in the RAAMAC Lab on automating document recognition and quantity take-offs using machine learning. Researched BIM workflows and used Revit to build ML datasets for domain-specific automated drawing recognition. Teaching Assistant for CEE 320: Construction Engineering." data-ja="RAAMAC Lab にて機械学習を用いた図面認識・数量算出の自動化に関する修士論文研究を実施。BIM ワークフローを研究し、Revit で ML データセットを構築。CEE 320（建設工学）のティーチングアシスタントも担当。">M.S. thesis research in the RAAMAC Lab on automating document recognition and quantity take-offs using machine learning. Researched BIM workflows and used Revit to build ML datasets for domain-specific automated drawing recognition. Teaching Assistant for CEE 320: Construction Engineering.</p>
+                        <div class="tl-skills">Python · Machine Learning · BIM · Revit</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-header">
+                            <div class="tl-logo-wrap">
+                                <img class="tl-logo" src="https://logo.clearbit.com/woven.toyota" alt="Woven by Toyota" onerror="this.parentElement.style.display='none'">
+                            </div>
+                            <div class="tl-info">
+                                <div class="tl-meta">
+                                    <span class="tl-role" data-en="Software Engineer Intern" data-ja="ソフトウェアエンジニア インターン">Software Engineer Intern</span>
+                                    <span class="tl-date">Jun – Sep 2024</span>
+                                </div>
+                                <div class="tl-company"><a href="https://woven.toyota" target="_blank" rel="noopener" class="tl-company-link">Woven by Toyota</a> · Internship · 🇯🇵 Tokyo, Japan</div>
+                            </div>
+                        </div>
+                        <p data-en="Embedded software engineer on middleware. Authored design documents and developed an in-vehicle API for a proof-of-concept application using C++, Python, and Bazel." data-ja="ミドルウェア担当の組み込みソフトウェアエンジニアとして従事。C++、Python、Bazel を用いた車載 API の設計ドキュメント作成と開発を担当。">Embedded software engineer on middleware. Authored design documents and developed an in-vehicle API for a proof-of-concept application using C++, Python, and Bazel.</p>
+                        <div class="tl-skills">C++ · Python · Bazel</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-header">
+                            <div class="tl-logo-wrap">
+                                <img class="tl-logo" src="https://logo.clearbit.com/aecom.com" alt="AECOM Hunt" onerror="this.parentElement.style.display='none'">
+                            </div>
+                            <div class="tl-info">
+                                <div class="tl-meta">
+                                    <span class="tl-role" data-en="Construction Engineer Intern" data-ja="建設エンジニア インターン">Construction Engineer Intern</span>
+                                    <span class="tl-date">Jun – Aug 2023</span>
+                                </div>
+                                <div class="tl-company"><a href="https://www.aecom.com" target="_blank" rel="noopener" class="tl-company-link">AECOM Hunt</a> · Internship · 🇺🇸 Chicago, IL</div>
+                            </div>
+                        </div>
+                        <p data-en="Chicago O'Hare Modernization Project (Terminal 5) — AECOM Hunt × Clayco × Bowa joint venture. Managed change orders, cost-loaded schedules, BIM coordination, RFIs, and Submittals on a $100M+ project." data-ja="Chicago O'Hare 近代化プロジェクト（Terminal 5）— AECOM Hunt × Clayco × Bowa ジョイントベンチャー。1億ドル超のプロジェクトにて変更指示・コスト積算スケジュール・BIM 調整・RFI・Submittal を管理。">Chicago O'Hare Modernization Project (Terminal 5) — AECOM Hunt × Clayco × Bowa joint venture. Managed change orders, cost-loaded schedules, BIM coordination, RFIs, and Submittals on a $100M+ project.</p>
+                        <div class="tl-skills">MEP Coordination · eBuilder · BIM</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-header">
+                            <div class="tl-logo-wrap">
+                                <img class="tl-logo" src="https://logo.clearbit.com/reconstruct.ai" alt="Reconstruct Inc" onerror="this.parentElement.style.display='none'">
+                            </div>
+                            <div class="tl-info">
+                                <div class="tl-meta">
+                                    <span class="tl-role" data-en="VDC Engineer Intern / Customer Success" data-ja="VDCエンジニア インターン・カスタマーサクセス">VDC Engineer Intern / Customer Success</span>
+                                    <span class="tl-date">Jan 2020 – May 2023</span>
+                                </div>
+                                <div class="tl-company"><a href="https://reconstruct.ai" target="_blank" rel="noopener" class="tl-company-link">Reconstruct Inc</a> · Contract · 🇺🇸 Champaign, IL</div>
+                            </div>
+                        </div>
+                        <p data-en="Localized the Reconstruct platform for the Japanese market, liaising directly with Ōbayashi（大林）, JR East（JR東日本）, and the Ministry of Land, Infrastructure, Transport and Tourism（国土交通省）. Studied VDC workflows and project management under senior engineers." data-ja="Reconstruct プラットフォームを日本市場向けにローカライズし、大林組、JR東日本、国土交通省と直接連携。上級エンジニアのもとで VDC ワークフローとプロジェクトマネジメントを習得。">Localized the Reconstruct platform for the Japanese market, liaising directly with Ōbayashi（大林）, JR East（JR東日本）, and the Ministry of Land, Infrastructure, Transport and Tourism（国土交通省）. Studied VDC workflows and project management under senior engineers.</p>
+                        <div class="tl-skills">Japanese · Oracle Primavera · VDC</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-header">
+                            <div class="tl-logo-wrap">
+                                <img class="tl-logo" src="https://logo.clearbit.com/wightco.com" alt="Wight & Company" onerror="this.parentElement.style.display='none'">
+                            </div>
+                            <div class="tl-info">
+                                <div class="tl-meta">
+                                    <span class="tl-role" data-en="Construction Manager Intern" data-ja="建設マネージャー インターン">Construction Manager Intern</span>
+                                    <span class="tl-date">Jun – Aug 2022</span>
+                                </div>
+                                <div class="tl-company"><a href="https://www.wightco.com" target="_blank" rel="noopener" class="tl-company-link">Wight &amp; Company</a> · Internship · 🇺🇸 United States</div>
+                            </div>
+                        </div>
+                        <p data-en="Contributed to the Benck Family Agricultural Interpretive Center project." data-ja="Benck Family Agricultural Interpretive Center プロジェクトに従事。">Contributed to the Benck Family Agricultural Interpretive Center project.</p>
+                        <div class="tl-skills">Procore · Project Management</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-header">
+                            <div class="tl-logo-wrap">
+                                <img class="tl-logo" src="https://logo.clearbit.com/illinois.edu" alt="UIUC" onerror="this.parentElement.style.display='none'">
+                            </div>
+                            <div class="tl-info">
+                                <div class="tl-meta">
+                                    <span class="tl-role" data-en="Undergraduate Research Assistant" data-ja="学部研究アシスタント">Undergraduate Research Assistant</span>
+                                    <span class="tl-date">Sep – Dec 2021</span>
+                                </div>
+                                <div class="tl-company"><a href="https://illinois.edu" target="_blank" rel="noopener" class="tl-company-link">University of Illinois Urbana-Champaign</a> · 🇺🇸 Champaign, IL</div>
+                            </div>
+                        </div>
+                        <p data-en="Computer vision and ML research for quality control of pre-pour concrete slabs. Built automated rebar inspection tools including gap analysis and rebar detection models." data-ja="コンクリートスラブの打設前品質管理に向けたコンピュータビジョン・ML 研究を実施。ギャップ分析および鉄筋検出モデルを含む自動検査ツールを開発。">Computer vision and ML research for quality control of pre-pour concrete slabs. Built automated rebar inspection tools including gap analysis and rebar detection models.</p>
+                        <div class="tl-skills">Computer Vision · Machine Learning</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-header">
+                            <div class="tl-logo-wrap">
+                                <img class="tl-logo" src="https://logo.clearbit.com/illinois.edu" alt="UIUC" onerror="this.parentElement.style.display='none'">
+                            </div>
+                            <div class="tl-info">
+                                <div class="tl-meta">
+                                    <span class="tl-role" data-en="Undergraduate Research Assistant" data-ja="学部研究アシスタント">Undergraduate Research Assistant</span>
+                                    <span class="tl-date">Sep – Dec 2019</span>
+                                </div>
+                                <div class="tl-company"><a href="https://illinois.edu" target="_blank" rel="noopener" class="tl-company-link">University of Illinois at Urbana-Champaign</a> · Part-time · 🇺🇸 Champaign, IL</div>
+                            </div>
+                        </div>
+                        <p data-en="Assisted graduate research on fly ash properties in concrete formation for the CEE Department. Ran calorimeter tests to measure heat curves of fly ash in concrete." data-ja="CEE 学科にてコンクリート中のフライアッシュ特性に関する大学院研究を補助。熱曲線測定のためカロリメーター試験を実施。">Assisted graduate research on fly ash properties in concrete formation for the CEE Department. Ran calorimeter tests to measure heat curves of fly ash in concrete.</p>
+                    </div>
+                </div>
+
+            </div>
+            <p class="tl-footer">Full history on <a href="https://www.linkedin.com/in/junryu-fu/" target="_blank" rel="noopener">LinkedIn</a>.</p>
         </section>
-        <section id="education" class="tab-content" style="display: none;">
-            <iframe src="pages/education.html"></iframe>
+
+        <section id="education" class="tab-content">
+            <h2 data-en="Education" data-ja="学歴">Education</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-header">
+                            <div class="tl-logo-wrap">
+                                <img class="tl-logo" src="https://logo.clearbit.com/yis.ac.jp" alt="Yokohama International School" onerror="this.parentElement.style.display='none'">
+                            </div>
+                            <div class="tl-info">
+                                <div class="tl-meta">
+                                    <span class="tl-role" data-en="International Baccalaureate Diploma" data-ja="国際バカロレア ディプロマ">International Baccalaureate Diploma</span>
+                                    <span class="tl-date">~ 2019</span>
+                                </div>
+                                <div class="tl-company"><a href="https://www.yis.ac.jp" target="_blank" rel="noopener" class="tl-company-link" data-en="Yokohama International School" data-ja="横浜インターナショナルスクール">Yokohama International School</a> · 🇯🇵 Yokohama, Japan</div>
+                            </div>
+                        </div>
+                        <p data-en="Dual-language diploma programme in English and Japanese." data-ja="英語・日本語の二言語ディプロマプログラム。">Dual-language diploma programme in English and Japanese.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-header">
+                            <div class="tl-logo-wrap">
+                                <img class="tl-logo" src="https://logo.clearbit.com/illinois.edu" alt="UIUC" onerror="this.parentElement.style.display='none'">
+                            </div>
+                            <div class="tl-info">
+                                <div class="tl-meta">
+                                    <span class="tl-role" data-en="B.Sc Civil and Environmental Engineering" data-ja="土木環境工学 理学士">B.Sc Civil and Environmental Engineering</span>
+                                    <span class="tl-date">2019 – 2023</span>
+                                </div>
+                                <div class="tl-company"><a href="https://illinois.edu" target="_blank" rel="noopener" class="tl-company-link" data-en="University of Illinois Urbana-Champaign" data-ja="イリノイ大学アーバナ・シャンペーン校">University of Illinois Urbana-Champaign</a> · 🇺🇸 Champaign, IL</div>
+                            </div>
+                        </div>
+                        <p data-en="Minor in Computer Science." data-ja="コンピュータサイエンス副専攻。">Minor in Computer Science.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-header">
+                            <div class="tl-logo-wrap">
+                                <img class="tl-logo" src="https://logo.clearbit.com/illinois.edu" alt="UIUC" onerror="this.parentElement.style.display='none'">
+                            </div>
+                            <div class="tl-info">
+                                <div class="tl-meta">
+                                    <span class="tl-role" data-en="M.Sc Civil Engineering" data-ja="土木工学 理学修士">M.Sc Civil Engineering</span>
+                                    <span class="tl-date">2023 – 2025</span>
+                                </div>
+                                <div class="tl-company"><a href="https://illinois.edu" target="_blank" rel="noopener" class="tl-company-link" data-en="University of Illinois Urbana-Champaign" data-ja="イリノイ大学アーバナ・シャンペーン校">University of Illinois Urbana-Champaign</a> · 🇺🇸 Champaign, IL</div>
+                            </div>
+                        </div>
+                        <p data-en="Thesis-based M.Sc in the RAAMAC Lab — machine learning applications in construction engineering and management." data-ja="RAAMAC ラボでの論文制修士 — 建設工学・マネジメントにおける機械学習の応用。">Thesis-based M.Sc in the RAAMAC Lab — machine learning applications in construction engineering and management.</p>
+                    </div>
+                </div>
+
+            </div>
         </section>
-        <section id="publication" class="tab-content" style="display: none;">
-            <iframe src="pages/publication.html"></iframe>
+
+        <section id="publication" class="tab-content">
+            <h2 data-en="Publication" data-ja="研究・論文">Publication</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-meta">
+                            <span class="tl-role">DrawingVQA: A Real-World Benchmark for Multi-Depth Visual-Textual Reasoning on Construction Drawings</span>
+                            <span class="tl-date">2026</span>
+                        </div>
+                        <div class="tl-company"><span class="pub-badge">Co-First Author</span> <strong>J. Fu</strong>, Y. Jung, M. Golparvar-Fard</div>
+                        <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-meta">
+                            <span class="tl-role">Self-Evaluation of Single and Multi-Agent LLMs as Assistants in Inspection Reporting Workflows</span>
+                            <span class="tl-date">2025</span>
+                        </div>
+                        <div class="tl-company">S.H. Hsu, Y. Jung, <strong>J. Fu</strong>, M. Golparvar-Fard</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-meta">
+                            <span class="tl-role">Bridging 2D Drawings and AI: Evaluating Requirements and Feasibility of ML Models for Quantity Take-Off and General Interpretation of Issued-for-Construction Drawings</span>
+                            <span class="tl-date">2025</span>
+                        </div>
+                        <div class="tl-company"><strong>J. Fu</strong></div>
+                        <div class="pub-venue">M.Sc Thesis · University of Illinois Urbana-Champaign</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-meta">
+                            <span class="tl-role">VL-con: Vision-Language Dataset for Deep Learning-Based Construction Monitoring Applications</span>
+                            <span class="tl-date">2024</span>
+                        </div>
+                        <div class="tl-company">S.H. Hsu, <strong>J. Fu</strong>, M. Golparvar-Fard</div>
+                        <div class="pub-venue">ISARC — International Symposium on Automation and Robotics in Construction</div>
+                        <div class="tl-skills">5 citations</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-body">
+                        <div class="tl-meta">
+                            <span class="tl-role">Early-Age Properties of High-Volume Fly Ash Concrete Mixes for Pavement: Volume 2</span>
+                            <span class="tl-date">2021</span>
+                        </div>
+                        <div class="tl-company">A. Baral, J.R. Roesler, <strong>J. Fu</strong></div>
+                        <div class="pub-venue">FHWA-ICT-21-026</div>
+                        <div class="tl-skills">6 citations</div>
+                    </div>
+                </div>
+
+            </div>
+            <p class="tl-footer">Full list on <a href="https://scholar.google.com/citations?user=fQlbcbMAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
         </section>
     </div>
+
     <script src="script.js"></script>
 </body>
-<meta name="google-site-verification" content="dJvywSb-k4PPSh55lZQBg6rej_RFRWkRZmNYeFRRsZk" />
 </html>
