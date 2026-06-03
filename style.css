@@ -21,8 +21,11 @@ body, html {
     top: 16px;
     right: 16px;
     display: flex;
-    gap: 8px;
     z-index: 100;
+}
+
+#language-selector .lang-button + .lang-button {
+    margin-left: 8px;
 }
 
 .lang-button {
@@ -61,6 +64,7 @@ body, html {
 }
 
 #animation-container h1 {
+    font-size: 2.25rem;
     font-size: clamp(1.75rem, 4vw, 2.75rem);
     font-weight: 600;
     color: white;
@@ -75,15 +79,21 @@ body, html {
 }
 
 /* Spline */
+#spline {
+    width: 100%;
+}
+
 #spline-animation {
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     padding: 0;
+    width: 100%;
 }
 
 #spline-animation spline-viewer {
+    display: block;
     width: 100%;
     max-width: 900px;
     height: 580px;
@@ -93,11 +103,14 @@ body, html {
 #tabs-container {
     display: flex;
     justify-content: center;
-    gap: 4px;
     padding: 8px 16px;
     max-width: 680px;
     width: 100%;
     margin: 0 auto;
+}
+
+#tabs-container .tab-button + .tab-button {
+    margin-left: 4px;
 }
 
 .tab-button {
@@ -214,9 +227,12 @@ body, html {
 
 .tl-header {
     display: flex;
-    gap: 12px;
     align-items: flex-start;
     margin-bottom: 10px;
+}
+
+.tl-logo-wrap {
+    margin-right: 12px;
 }
 
 .tl-logo-wrap {
@@ -230,6 +246,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 12px;
 }
 
 .tl-logo {
@@ -341,7 +358,6 @@ body, html {
 .scroll-hint-inner {
     display: flex;
     align-items: center;
-    gap: 10px;
     background: rgba(255, 255, 255, 0.07);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
@@ -359,6 +375,7 @@ body, html {
 .scroll-hint-arrow {
     color: #2dd4bf;
     display: inline-block;
+    margin-left: 10px;
     animation: arrowBounce 0.9s ease infinite;
 }
 
@@ -396,8 +413,15 @@ body, html {
 @media screen and (max-width: 600px) {
     #tabs-container {
         flex-wrap: wrap;
-        gap: 6px;
         padding: 8px 12px;
+    }
+
+    #tabs-container .tab-button + .tab-button {
+        margin-left: 0;
+    }
+
+    .tab-button {
+        margin: 3px;
     }
 
     .tab-button {
